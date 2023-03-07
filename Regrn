@@ -1,0 +1,13 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+import seaborn as sns
+%matplotlib inline
+data = pd.read_csv(r'C:\Users\Ardra\Desktop\DS\PPT & E Notes\Learning\Youtube\1000_Companies.csv')
+X = data.iloc[:,:-1].values 
+y = data.iloc[:,-1].values  
+data.info()
+data.describe()
+corrmatrix = data.corr()
+plt.subplots(figsize=(20,15))
+sns.heatmap(corrmatrix,annot=True,vmin=-0.5,vmax=1,linewidth=0.3,cmap='YlBlGn')
